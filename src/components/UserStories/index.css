@@ -1,0 +1,15 @@
+.story-image {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+}
+
+.story-container {
+  display: inline-flex !important;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stories-container {
+  margin: 20px;
+}
