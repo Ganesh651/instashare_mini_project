@@ -1,0 +1,30 @@
+.user-details-section {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+.user-details-container {
+  display: flex;
+  align-items: center;
+}
+
+.user-profile-pic {
+  height: 150px;
+  width: 150px;
+  border-radius: 150px;
+}
+
+.user-details {
+  margin-left: 20px;
+}
+
+.count-container {
+  display: flex;
+  align-items: center;
+}
+
+.count-container p {
+  margin: 8px 10px 8px 0;
+}

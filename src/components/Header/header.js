@@ -7,7 +7,7 @@ export const Navbar = styled.nav`
   align-items: center;
   justify-content: space-between;
   box-shadow: 0px 4px 16px 0px #bfbfbf;
-  padding: 5px 50px;
+  padding: 5px 100px;
   @media screen and (max-width: 768px) {
    padding: 6px 20px;
   }

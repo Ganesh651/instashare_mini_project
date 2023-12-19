@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Cookies from 'js-cookie'
 import { useNavigate, Navigate } from 'react-router-dom'
-import { loginUrl } from '../FetchURLS'
+import { loginUrl } from '../Urls'
 import {
   LoginContainer,
   LoginImage,

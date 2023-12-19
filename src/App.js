@@ -3,6 +3,7 @@ import Login from "./components/Login";
 import Home from "./components/Home";
 import Notfound from "./components/Notfound";
 import Profile from "./components/Profile";
+import UserProfile from "./components/UserProfile";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 
@@ -16,9 +17,13 @@ const App = () => (
         <ProtectedRoute>
           <Home />
         </ProtectedRoute>} />
-      <Route path="/profile" element={
+      <Route path="/my-profile" element={
         <ProtectedRoute>
           <Profile />
+        </ProtectedRoute>} />
+      <Route path="/user/:id" element={
+        <ProtectedRoute>
+          <UserProfile />
         </ProtectedRoute>} />
       <Route path="*" element={<Notfound />} />
     </Routes>

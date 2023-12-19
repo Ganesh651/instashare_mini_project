@@ -6,7 +6,7 @@ import { BackgroundContainer } from './home'
 import UserStories from '../UserStories'
 import useFetch from '../useFetch'
 import Posts from '../Posts'
-import { postsUrl } from '../FetchURLS'
+import { postsUrl } from '../Urls'
 import './index.css'
 
 
@@ -20,15 +20,13 @@ const Home = () => {
   }
   const data = useFetch(postsUrl, options)
   const { fetchedData, isLoading } = data
-  console.log(fetchedData)
-
-  // const comments = fetchedData.posts.map(each => (each.comments.map(comment)))
+  // console.log(fetchedData)
   const renderLoaderView = () => (
     <div className="loader-container">
       <ThreeDots
-        height="80"
-        width="80"
-        radius="9"
+        height={80}
+        width={80}
+        radius={9}
         color="#4fa94d"
         ariaLabel="three-dots-loading"
         visible={true} />

@@ -68,6 +68,7 @@ export const LoginButton = styled.button`
   font-weight: 600;
   font-family: 'Roboto';
   border-radius: 3px;
+  cursor: pointer;
 `
 export const ErrorMessage = styled.p`
   color: var(--light-red-500, #ef4444);

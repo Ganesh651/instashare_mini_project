@@ -2,7 +2,7 @@ import React from 'react'
 import Cookies from 'js-cookie';
 import Slider from 'react-slick'
 import useFetch from '../useFetch';
-import { storiesUrl } from '../FetchURLS';
+import { storiesUrl } from '../Urls';
 import './index.css'
 
 const UserStories = () => {
@@ -14,10 +14,10 @@ const UserStories = () => {
     }
   }
   const stories = useFetch(storiesUrl, options)
-  const { fetchedData, isLoading } = stories
+  const { fetchedData } = stories
   // console.log(fetchedData, isLoading)
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 6,
@@ -27,7 +27,7 @@ const UserStories = () => {
   return (
     <div className='stories-container'>
       {fetchedData.length === 0 ?
-        <p>Loading...</p> :
+        <p style={{ textAlign: "center" }}>{'Loading...'}</p> :
         <Slider {...settings}>
           {fetchedData.users_stories.map(story => (
             <div key={story.user_id} className='story-container'>
