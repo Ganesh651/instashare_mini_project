@@ -1,0 +1,12 @@
+.user-posts-image {
+  margin: 0 10px 10px 0;
+  height: 200px;
+  width: 200px;
+}
+
+@media screen and (max-width: 767px) {
+  .user-posts-image {
+    height: 100px;
+    width: 100px;
+  }
+}

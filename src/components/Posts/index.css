@@ -56,7 +56,7 @@
   color: #262626;
   font-size: 14px;
   font-family: 'Roboto';
-  font-weight: 500;
+  font-weight: 600;
   line-height: 18px;
 }
 
@@ -93,4 +93,18 @@
 
 .link {
   text-decoration: none;
+}
+@media screen and (max-width: 768px) {
+  .post-container {
+    background-color: transparent;
+    border: 0;
+  }
+
+  .post-details-image {
+    height: 414px;
+  }
+
+  .post-details-container {
+    padding: 10px;
+  }
 }

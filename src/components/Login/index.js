@@ -11,7 +11,8 @@ import {
   Input,
   Label,
   ErrorMessage,
-  LoginButton
+  LoginButton,
+  Logo
 } from './login'
 import './index.css'
 
@@ -74,8 +75,7 @@ const Login = () => {
       </div>
       <LoginFrom onSubmit={onFormSubmit}>
         <LogoContainer>
-          <LoginImage
-            style={{ width: "82px", height: "42px" }}
+          <Logo
             src="https://res.cloudinary.com/dky69roxl/image/upload/v1687411063/Standard_Collection_8_yc8kdx.svg"
             alt="website logo"
           />

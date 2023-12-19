@@ -1,5 +1,5 @@
 import { createContext } from "react";
 
-const SearchContext = createContext({})
+const SearchAndThemeContext = createContext({})
 
-export default SearchContext
+export default SearchAndThemeContext

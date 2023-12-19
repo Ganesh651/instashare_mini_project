@@ -13,3 +13,20 @@
 .stories-container {
   margin: 20px;
 }
+@media screen and (max-width: 768px) {
+  .story-image {
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+  }
+
+  .story-user-name {
+    font-size: 10px;
+    text-align: center;
+  }
+
+  .stories-container {
+    margin: 0 30px 0 30px;
+    padding: 10px;
+  }
+}

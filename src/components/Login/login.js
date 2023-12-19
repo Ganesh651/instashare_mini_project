@@ -7,10 +7,9 @@ export const LoginContainer = styled.div`
   align-items: center;
   min-height: 100vh;
   @media screen and (max-width: 768px) {
-  .login-container {
     justify-content: center;
-    height: 100vh;
-  }
+    min-height: 100vh;
+    padding: 20px
 }
 `
 
@@ -25,14 +24,24 @@ export const LoginImage = styled.img`
     display: none;
   }
 `
+export const Logo = styled.img`
+  width: 82px;
+  height: 42px;
+`
 export const LoginFrom = styled.form`
   padding: 30px;
   width: 350px;
   height: 350px;
   flex-shrink: 0;
   border-radius: 8px;
-  background: #fefeff;
-  box-shadow: 0px 8px 40px 0px#bfbfbf;
+  background-color: #fefeff;
+  box-shadow: 0px 8px 40px 0px #bfbfbf;
+  @media screen and (max-width: 768px){
+    height: auto;
+    width: 100%;
+    background-color: transparent;
+     box-shadow: none;
+  }
 `
 export const InputContainer = styled.div`
  margin-bottom: 20px;
@@ -44,12 +53,11 @@ export const Label = styled.label`
   font-family: 'Roboto';
   font-weight: 500;
   line-height: 16px;
-  letter-spacing: 0.12px;
   text-transform: uppercase;
 `
 export const Input = styled.input`
   width: 95%;
-  height: 30px;
+  height: 20px;
   flex-shrink: 0;
   border-radius: 2px;
   background-color: #eee;
@@ -67,7 +75,7 @@ export const LoginButton = styled.button`
   color: #ffffff;
   font-weight: 600;
   font-family: 'Roboto';
-  border-radius: 3px;
+  border-radius: 5px;
   cursor: pointer;
 `
 export const ErrorMessage = styled.p`

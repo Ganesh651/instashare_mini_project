@@ -28,3 +28,103 @@
 .count-container p {
   margin: 8px 10px 8px 0;
 }
+.user-stories-container {
+  margin: 20px 0;
+}
+
+.user-story-image {
+  height: 60px;
+  width: 60px;
+  border-radius: 60px;
+  padding: 1px;
+  border: 1px solid #bfbfbf;
+  margin-right: 20px;
+}
+
+.user-posts-container {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.posts-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.posts-container span {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.no-posts-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .mobile-username {
+    font-size: "20px";
+    color: "#262626";
+  }
+
+  .user-profile-pic {
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+
+  }
+
+  .responsive-user-name {
+    display: none;
+  }
+
+  .user-details-section {
+    width: auto;
+    margin: 0;
+    padding: 10px;
+  }
+
+  .user-id {
+    display: none;
+  }
+
+  .user-bio {
+    display: none;
+  }
+
+  .user-details-container {
+    margin: 20px 0 0 0;
+  }
+
+  .user-id-mobile {
+    font-weight: 600;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .mobile-username {
+    display: none;
+  }
+
+  .responsive-user-name {
+    font-size: "20px";
+    color: "#262626";
+  }
+
+  .user-id-mobile {
+    display: none;
+  }
+
+  .user-bio-mobile {
+    display: none;
+  }
+
+  .user-id {
+    font-weight: 600;
+  }
+}

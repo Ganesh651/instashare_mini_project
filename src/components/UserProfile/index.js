@@ -1,10 +1,12 @@
 import React from 'react'
 import { ThreeDots } from 'react-loader-spinner';
+import { IoCamera } from "react-icons/io5";
 import { useParams } from 'react-router-dom'
 import useFetch from '../useFetch'
 import Cookies from 'js-cookie'
 import Header from '../Header'
 import { userDetailsUrl } from '../Urls';
+import UserPosts from '../UserPosts';
 import './index.css'
 
 const UserProfile = () => {
@@ -23,7 +25,7 @@ const UserProfile = () => {
 
   const { fetchedData, isLoading } = userData
 
-  console.log(fetchedData, isLoading)
+  // console.log(fetchedData, isLoading)
 
 
   const renderLoaderView = () => (
@@ -38,8 +40,18 @@ const UserProfile = () => {
     </div>
   )
 
+  const renderUserStories = () => (
+    <div className='user-stories-container'>
+      {fetchedData.user_details.stories.map(story => (
+        <img className='user-story-image' src={story.image} alt="story" key={story.id} />
+      ))}
+    </div>
+  )
+
+
   const renderSuccessView = () => (
     <div className='user-details-section'>
+      <span className='mobile-username'>{fetchedData.user_details.user_name}</span>
       <div className='user-details-container'>
         <img
           src={fetchedData.user_details.profile_pic}
@@ -47,7 +59,7 @@ const UserProfile = () => {
           className='user-profile-pic'
         />
         <div className='user-details'>
-          <span style={{ fontSize: "20px", color: "#262626" }}>{fetchedData.user_details.user_name}</span>
+          <span className='responsive-user-name'>{fetchedData.user_details.user_name}</span>
           <div className='count-container'>
             <p style={{ color: "#262626" }}>
               <span style={{ fontWeight: "600" }}>{fetchedData.user_details.posts_count} </span>Posts
@@ -63,6 +75,26 @@ const UserProfile = () => {
           <p className='user-bio'>{fetchedData.user_details.user_bio}</p>
         </div>
       </div>
+      <p className='user-id-mobile'>{fetchedData.user_details.user_id}</p>
+      <p className='user-bio-mobile'>{fetchedData.user_details.user_bio}</p>
+      {renderUserStories()}
+      <hr />
+      <div className='posts-container'>
+        <img src="https://res.cloudinary.com/dky69roxl/image/upload/v1702960972/Frame_1420_goqrw6.png" alt="post icon" />
+        <span>Posts</span>
+      </div>
+      {
+        fetchedData.user_details.posts.length === 0 ?
+          <div className='no-posts-container'>
+            <IoCamera />
+            <p>No Posts Yet</p>
+          </div> :
+          <div className='user-posts-container'>
+            {fetchedData.user_details.posts.map(post => (
+              <UserPosts post={post} key={post.id} />
+            ))}
+          </div>
+      }
     </div>
   )
 

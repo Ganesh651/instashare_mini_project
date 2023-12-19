@@ -21,8 +21,29 @@ const UserStories = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 6,
-    slidesToScroll: 2
-  };
+    slidesToScroll: 5,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 6,
+          slidesToScroll: 5,
+          infinite: true,
+          speed: 500
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 3,
+          initialSlide: 2,
+          speed: 500,
+          infinite: true
+        }
+      }
+    ]
+  }
 
   return (
     <div className='stories-container'>
@@ -32,7 +53,7 @@ const UserStories = () => {
           {fetchedData.users_stories.map(story => (
             <div key={story.user_id} className='story-container'>
               <img src={story.story_url} alt={story.user_name} className='story-image' />
-              <p>{story.user_name}</p>
+              <p className='story-user-name'>{story.user_name}</p>
             </div>
           ))}
         </Slider>

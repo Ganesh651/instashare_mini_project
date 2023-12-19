@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useContext } from 'react'
 import Cookies from 'js-cookie'
 import { ThreeDots } from 'react-loader-spinner'
 import Header from '../Header'
@@ -7,10 +7,13 @@ import UserStories from '../UserStories'
 import useFetch from '../useFetch'
 import Posts from '../Posts'
 import { postsUrl } from '../Urls'
+import SearchAndThemeContext from '../../context/SearchContext'
 import './index.css'
 
 
 const Home = () => {
+  const { search } = useContext(SearchAndThemeContext)
+
   const token = Cookies.get("jwt_token")
   const options = {
     method: "GET",
@@ -18,7 +21,9 @@ const Home = () => {
       authorization: `Bearer ${token}`
     }
   }
-  const data = useFetch(postsUrl, options)
+  const searchPost = postsUrl + search
+  console.log(searchPost)
+  const data = useFetch(searchPost, options)
   const { fetchedData, isLoading } = data
   // console.log(fetchedData)
   const renderLoaderView = () => (
@@ -34,7 +39,7 @@ const Home = () => {
   )
 
   const renderSuccessView = () => {
-    console.log("Data Recieved")
+    // console.log("Data Recieved")
     return <>
       {fetchedData.posts.map(eachPost => (
         <Posts eachPost={eachPost} key={eachPost.post_id} />
@@ -66,6 +71,7 @@ const Home = () => {
       <Header />
       <BackgroundContainer>
         <UserStories />
+        <hr />
         {renderPost()}
       </BackgroundContainer>
     </Fragment>
