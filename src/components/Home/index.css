@@ -3,3 +3,12 @@
   justify-content: center;
   align-items: center;
 }
+.line {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .line {
+    display: block;
+  }
+}
