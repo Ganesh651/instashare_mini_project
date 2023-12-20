@@ -121,7 +121,7 @@ const Login = () => {
             <ThreeDots
               height={50}
               width={50}
-              radius={9}
+              radius={10}
               color="#ffffff"
               ariaLabel="three-dots-loading"
               visible={true} />
