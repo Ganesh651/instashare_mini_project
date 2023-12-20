@@ -105,9 +105,29 @@
     background-color: transparent;
     border: 0;
   }
+ .likes-count {
+   font-size: 12px;
+ }
 
+ .caption {
+   font-size: 12px;
+   margin: 5px 0;
+   font-family: "monospace";
+ }
+
+ .comment {
+   font-size: 12px;
+   margin: 5px 0;
+   font-family: "monospace";
+ }
+
+ .created-at {
+   font-size: 12px;
+   margin: 5px 0;
+   font-family: "monospace";
+ }
   .post-details-image {
-    height: 414px;
+    height: 350px;
   }
 
   .post-details-container {

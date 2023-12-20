@@ -21,13 +21,13 @@ const UserStories = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 6,
-    slidesToScroll: 5,
+    slidesToScroll: 3,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 6,
-          slidesToScroll: 5,
+          slidesToScroll: 3,
           infinite: true,
           speed: 500
         }
@@ -48,7 +48,7 @@ const UserStories = () => {
   return (
     <div className='stories-container'>
       {fetchedData.length === 0 ?
-        <p style={{ textAlign: "center" }}>{'Loading...'}</p> :
+        <p style={{ textAlign: "center" }}>{''}</p> :
         <Slider {...settings}>
           {fetchedData.users_stories.map(story => (
             <div key={story.user_id} className='story-container'>

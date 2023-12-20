@@ -61,13 +61,13 @@ const UserProfile = () => {
         <div className='user-details'>
           <span className='responsive-user-name'>{fetchedData.user_details.user_name}</span>
           <div className='count-container'>
-            <p style={{ color: "#262626" }}>
+            <p className='count-details' style={{ color: "#262626" }}>
               <span style={{ fontWeight: "600" }}>{fetchedData.user_details.posts_count} </span>Posts
             </p>
-            <p style={{ color: "#262626" }}>
+            <p className='count-details' style={{ color: "#262626" }}>
               <span style={{ fontWeight: "600" }}>{fetchedData.user_details.followers_count} </span>follower
             </p>
-            <p style={{ color: "#262626" }}>
+            <p className='count-details' style={{ color: "#262626" }}>
               <span style={{ fontWeight: "600" }}>{fetchedData.user_details.following_count} </span>following
             </p>
           </div>

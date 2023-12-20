@@ -78,6 +78,15 @@ export const LoginButton = styled.button`
   border-radius: 5px;
   cursor: pointer;
 `
+export const LoadingContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  background-color: #4094ef;
+  border-radius: 5px;
+  cursor: pointer;
+`
 export const ErrorMessage = styled.p`
   color: var(--light-red-500, #ef4444);
   font-size: 13px;

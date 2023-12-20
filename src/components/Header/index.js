@@ -23,7 +23,7 @@ import './index.css';
 
 const Header = () => {
   const navigate = useNavigate()
-  const { theme, setTheme, search, setSearch } = useContext(SearchAndThemeContext)
+  const { search, setSearch } = useContext(SearchAndThemeContext)
 
   const onClickLogout = () => {
     Cookies.remove("jwt_token")
