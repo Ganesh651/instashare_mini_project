@@ -23,7 +23,7 @@ import './index.css';
 
 const Header = () => {
   const navigate = useNavigate()
-  const { search, setSearch } = useContext(SearchAndThemeContext)
+  const { search, changeSearch } = useContext(SearchAndThemeContext)
 
   const onClickLogout = () => {
     Cookies.remove("jwt_token")
@@ -31,7 +31,7 @@ const Header = () => {
   }
 
   const onSearchChange = (e) => {
-    setSearch(e.target.value)
+    changeSearch(e.target.value)
   }
 
   const onSearchHaddler = () => {

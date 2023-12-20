@@ -11,10 +11,16 @@ import { useState } from "react";
 
 const App = () => {
   const [search, setSearch] = useState("")
-  const [theme, setTheme] = useState("")
+
+
+  const changeSearch = value => {
+    setSearch(value)
+  }
+
+
 
   return (
-    <SearchAndThemeContext.Provider value={{ search, theme, setSearch, setTheme }}>
+    <SearchAndThemeContext.Provider value={{ search, changeSearch }}>
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login />} />

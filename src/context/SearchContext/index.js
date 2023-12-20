@@ -1,5 +1,8 @@
 import { createContext } from "react";
 
-const SearchAndThemeContext = createContext({})
+const SearchAndThemeContext = createContext({
+  search: "",
+  changeSearch: () => { }
+})
 
 export default SearchAndThemeContext
