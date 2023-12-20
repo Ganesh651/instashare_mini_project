@@ -97,7 +97,6 @@ const Home = () => {
       <Header />
       <BackgroundContainer>
         <UserStories />
-        <hr className='line' />
         {renderPost()}
       </BackgroundContainer>
     </Fragment>

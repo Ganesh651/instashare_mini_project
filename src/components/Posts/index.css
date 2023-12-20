@@ -102,8 +102,8 @@
 }
 @media screen and (max-width: 768px) {
   .post-container {
-    background-color: transparent;
-    border: 0;
+    margin: 10px;
+      border-radius: 2px;
   }
  .likes-count {
    font-size: 12px;
