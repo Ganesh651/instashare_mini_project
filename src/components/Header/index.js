@@ -3,6 +3,7 @@ import Cookies from 'js-cookie';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';
 import SearchAndThemeContext from '../../context/SearchContext';
+import HamburgerMenu from '../HamburgerMenu';
 import {
   Navbar,
   LogoContainer,
@@ -76,6 +77,7 @@ const Header = () => {
           </ListContainer>
         </NavbarItems>
       </NavbarItemsContainer>
+      <HamburgerMenu />
     </Navbar>
   )
 }

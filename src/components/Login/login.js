@@ -6,6 +6,7 @@ export const LoginContainer = styled.div`
   justify-content: space-evenly;
   align-items: center;
   min-height: 100vh;
+  padding: 30px;
   @media screen and (max-width: 768px) {
     justify-content: center;
     min-height: 100vh;
@@ -31,7 +32,6 @@ export const Logo = styled.img`
 export const LoginFrom = styled.form`
   padding: 30px;
   width: 350px;
-  height: 350px;
   flex-shrink: 0;
   border-radius: 8px;
   background-color: #fefeff;

@@ -1,4 +1,5 @@
-import React, { Fragment, useContext } from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { Fragment, useContext, useState } from 'react'
 import Cookies from 'js-cookie'
 import { ThreeDots } from 'react-loader-spinner'
 import Header from '../Header'
@@ -13,6 +14,8 @@ import './index.css'
 
 const Home = () => {
   const { search } = useContext(SearchAndThemeContext)
+  const [likeMessage, setLikeMessage] = useState({})
+  const [isClicked, setIsClicked] = useState(true)
 
   const token = Cookies.get("jwt_token")
   const options = {
@@ -22,7 +25,6 @@ const Home = () => {
     }
   }
   const searchPost = postsUrl + search
-  console.log(searchPost)
   const data = useFetch(searchPost, options)
   const { fetchedData, isLoading } = data
   // console.log(fetchedData)
@@ -38,11 +40,35 @@ const Home = () => {
     </div>
   )
 
+  const isPostLiked = () => {
+    setIsClicked(!isClicked)
+  }
+
+  const onpostLike = async id => {
+    const option = {
+      method: "POST",
+      headers: {
+        authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify({ like_status: isClicked })
+    }
+    const response = await fetch(`https://apis.ccbp.in/insta-share/posts/${id}/like`, option)
+    const data = await response.json()
+    // console.log(data)
+    setLikeMessage(data)
+  }
+
   const renderSuccessView = () => {
     // console.log("Data Recieved")
     return <>
       {fetchedData.posts.map(eachPost => (
-        <Posts eachPost={eachPost} key={eachPost.post_id} />
+        <Posts eachPost={eachPost}
+          key={eachPost.post_id}
+          onpostLike={onpostLike}
+          likeMessage={likeMessage}
+          isPostLiked={isPostLiked}
+          isClicked={isClicked}
+        />
       ))}
     </>
   }

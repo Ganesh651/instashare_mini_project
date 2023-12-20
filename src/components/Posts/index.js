@@ -7,28 +7,50 @@ import { Link, } from 'react-router-dom';
 import './index.css';
 
 const Posts = props => {
-  const [isClicked, setIsClicked] = useState(false)
-  const { eachPost } = props
-  const onBtnClick = () => setIsClicked(!isClicked)
+  const {
+    eachPost,
+    onpostLike,
+    isPostLiked,
+    isClicked,
+  } = props
+  const [count, setCount] = useState(eachPost.likes_count)
+
+  const onBtnClick = () => {
+    onpostLike(eachPost.post_id)
+    isPostLiked()
+    setCount(count + 1)
+  }
+
+  const onDislike = () => {
+    onpostLike(eachPost.post_id)
+    isPostLiked()
+    setCount(count - 1)
+  }
 
 
   return (
-    <Link to={`/user/${eachPost.user_id}`} style={{ textDecoration: "none", color: "#000" }}>
-      <div className='post-container'>
+    <div className='post-container'>
+      <Link to={`/user/${eachPost.user_id}`} style={{ textDecoration: "none", color: "#000" }}>
         <div className='post-header'>
           <img src={eachPost.profile_pic} alt={eachPost.user_name} />
           <span>{eachPost.user_name}</span>
         </div>
+      </Link >
         <img
           src={eachPost.post_details.image_url}
           alt={eachPost.post_details.caption}
           className='post-details-image'
         />
         <div className='post-details-container'>
-          <div className='icons-container'>
+        <div className='icons-container'>
+          {isClicked ?
             <button type='button' className='like-button' onClick={onBtnClick}>
-              {isClicked ? <FcLike className='icons' /> : <BsHeart className='icons' />}
+              <BsHeart className='icons' title="disliked" />
+            </button> :
+            <button type='button' className='like-button' onClick={onDislike}>
+              <FcLike className='heart-icon' title="Liked" />
             </button>
+          }
             <div>
               <BsChat className='icons' />
             </div>
@@ -37,7 +59,7 @@ const Posts = props => {
             </div>
           </div>
           <div style={{ marginLeft: "8px" }}>
-            <p className='likes-count'>{eachPost.likes_count} likes</p>
+          <p className='likes-count'>{count} likes</p>
             <p className='caption'>{eachPost.post_details.caption}</p>
             {eachPost.comments.map(each => (
               <p className='comment' key={each.user_id}><span className='span-text-comment'>{each.user_name} </span> {each.comment}</p>
@@ -45,8 +67,7 @@ const Posts = props => {
             <p className='created-at'>{eachPost.created_at}</p>
           </div>
         </div>
-      </div>
-    </Link >
+    </div>
   )
 }
 
