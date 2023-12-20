@@ -51,8 +51,10 @@ const Posts = props => {
               <FcLike className='heart-icon' title="Liked" />
             </button>
           }
-            <div>
+          <div>
+            <button ty="button" className='like-button'>
               <BsChat className='icons' />
+            </button>
             </div>
             <div>
               <BsShareFill className='icons' />

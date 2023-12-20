@@ -16,6 +16,7 @@ const Home = () => {
   const { search } = useContext(SearchAndThemeContext)
   const [likeMessage, setLikeMessage] = useState({})
   const [isClicked, setIsClicked] = useState(true)
+  const [isCommentAdded, setIsCommentAdded] = useState(false)
 
   const token = Cookies.get("jwt_token")
   const options = {
@@ -68,6 +69,8 @@ const Home = () => {
           likeMessage={likeMessage}
           isPostLiked={isPostLiked}
           isClicked={isClicked}
+          setIsCommentAdded={setIsCommentAdded}
+          isCommentAdded={isCommentAdded}
         />
       ))}
     </>

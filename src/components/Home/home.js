@@ -7,6 +7,7 @@ export const BackgroundContainer = styled.div`
   background-size: cover;
   padding: 5px 100px;
   @media screen and (max-width: 768px){
-    padding: 0;
+    padding: 10px;
+    background-color: #bfbfbf;
   }
 `

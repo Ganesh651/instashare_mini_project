@@ -34,7 +34,9 @@ const Header = () => {
     setSearch(e.target.value)
   }
 
-  const onSearchHaddler = () => { }
+  const onSearchHaddler = () => {
+
+  }
 
   return (
     <Navbar>
